@@ -42,9 +42,6 @@ async def open_tunneled_kubectl_tunnel(
 
     # Step 1: Start kubectl port-forward and capture the dynamic port
     kubectl_cmd = [
-        # *base_cmd,
-        # f"ubuntu@{cluster}",
-        # "exec",
         *(("tsh", "ssh", teleport.tsh_host, "exec") if teleport else ()),
         "ssh",
         "-tt",
